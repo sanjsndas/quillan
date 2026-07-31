@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About · Quillan Cookie Meadow</title>
+  <meta name="description" content="About Quillan Cookie Meadow — the people, the meadow, and the quiet craft of editorial writing.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      background: #f7f3ec;
+      color: #1e1b18;
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      padding: 0 1.5rem;
+    }
+    .wrap {
+      max-width: 1440px;
+      margin: 0 auto;
+      background: #fcf9f5;
+      box-shadow: 0 0 80px rgba(0,0,0,0.02);
+    }
+    :root {
+      --ink: #1e1b18;
+      --paper: #fcf9f5;
+      --meadow: #6f8c7a;
+      --meadow-light: #b6cebe;
+      --quill: #dac5b0;
+      --cookie: #e7d4c0;
+      --border-soft: #e4dbd0;
+      --shadow-card: 0 24px 48px -12px rgba(30, 27, 24, 0.08);
+    }
+    h1, h2, h3, h4 {
+      font-family: 'DM Serif Display', serif;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    /* ---- navigation: floating, asymmetrical ---- */
+    .nav-floating {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 2.5rem 1.2rem 2.5rem;
+      border-bottom: 1px solid var(--border-soft);
+      background: var(--paper);
+      position: relative;
+      z-index: 10;
+    }
+    .logo-mark {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.9rem;
+      letter-spacing: -0.04em;
+      background: var(--meadow);
+      color: white;
+      padding: 0.3rem 1.2rem 0.2rem 1.2rem;
+      border-radius: 50px 8px 50px 8px;
+      transform: rotate(-0.5deg);
+      box-shadow: 0 6px 0 #3d5245;
+    }
+    .logo-mark span {
+      background: var(--quill);
+      color: var(--ink);
+      font-size: 1rem;
+      padding: 0.1rem 0.7rem;
+      border-radius: 40px;
+      margin-left: 0.3rem;
+      transform: rotate(2deg);
+    }
+    .nav-links {
+      display: flex;
+      gap: 2.8rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #3d3a36;
+    }
+    .nav-links a { transition: 0.2s; border-bottom: 2px solid transparent; padding-bottom: 4px; }
+    .nav-links a:hover { border-bottom-color: var(--meadow); color: #1e1b18; }
+    .nav-extra {
+      display: flex;
+      gap: 1.2rem;
+      align-items: center;
+    }
+    .nav-extra .search-icon {
+      background: var(--cookie);
+      padding: 0.6rem 1rem;
+      border-radius: 60px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: 0.2s;
+      cursor: default;
+    }
+    /* ---- about hero: meadow & quill ---- */
+    .about-hero {
+      padding: 4rem 2.5rem 3rem 2.5rem;
+      background: #f3efe8;
+      border-bottom: 2px solid #e3d8cb;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3rem;
+    }
+    .about-hero h1 {
+      font-size: 4rem;
+      line-height: 1.1;
+      margin-bottom: 1.2rem;
+    }
+    .about-hero h1 i { color: var(--meadow); font-style: italic; }
+    .about-hero p {
+      font-size: 1.2rem;
+      color: #3d3a36;
+      border-left: 6px solid var(--quill);
+      padding-left: 1.8rem;
+      max-width: 90%;
+    }
+    .about-visual {
+      background: #d5cdc0;
+      border-radius: 60px 8px 60px 8px;
+      min-height: 200px;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300"><rect width="400" height="300" fill="%23b6cebe"/><circle cx="140" cy="110" r="60" fill="%23dac5b0" opacity="0.6"/><circle cx="270" cy="180" r="50" fill="%23e7d4c0" opacity="0.6"/><path d="M70 220 L200 100 L330 220" stroke="%236f8c7a" stroke-width="8" fill="none"/></svg>');
+      background-size: cover;
+      background-blend-mode: overlay;
+      box-shadow: var(--shadow-card);
+      transform: rotate(0.4deg);
+    }
+    /* ---- about content: story, team, principles ---- */
+    .about-story {
+      padding: 4rem 2.5rem 3rem 2.5rem;
+      background: var(--paper);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      border-bottom: 1px solid var(--border-soft);
+    }
+    .about-story h2 {
+      font-size: 2.4rem;
+      margin-bottom: 1.2rem;
+      border-bottom: 4px solid var(--cookie);
+      padding-bottom: 0.3rem;
+      display: inline-block;
+    }
+    .about-story p { margin-bottom: 1.2rem; color: #2d2925; }
+    .about-story ul { list-style: none; margin-top: 0.8rem; }
+    .about-story ul li { padding: 0.4rem 0; border-bottom: 1px dotted #ddd2c4; display: flex; gap: 0.8rem; }
+    .about-story ul li::before { content: "✧"; color: var(--meadow); }
+    .principles-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.8rem;
+      margin-top: 1.2rem;
+    }
+    .principle-card {
+      background: #f6f2eb;
+      padding: 1.8rem 1.5rem;
+      border-radius: 40px 8px 40px 8px;
+      border: 1px solid #e8ded2;
+    }
+    .principle-card h3 { font-size: 1.6rem; margin-bottom: 0.3rem; }
+    .principle-card p { font-size: 0.95rem; color: #3d3a36; }
+    /* ---- team section ---- */
+    .team-section {
+      padding: 4rem 2.5rem 3rem 2.5rem;
+      background: #f1ece4;
+      border-bottom: 2px dotted #dacfc2;
+    }
+    .team-section h2 {
+      font-size: 2.6rem;
+      margin-bottom: 2rem;
+      display: flex;
+      gap: 1rem;
+      align-items: baseline;
+    }
+    .team-section h2 small {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #5c544c;
+    }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+    }
+    .team-member {
+      background: var(--paper);
+      padding: 1.8rem 1.5rem;
+      border-radius: 60px 8px 60px 8px;
+      box-shadow: var(--shadow-card);
+      border: 1px solid #ddd2c4;
+    }
+    .team-member .avatar {
+      width: 70px;
+      height: 70px;
+      background: var(--meadow-light);
+      border-radius: 50%;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: #1e1b18;
+    }
+    .team-member h4 { font-size: 1.4rem; }
+    .team-member .role { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.04em; color: #5c544c; }
+    /* ---- footer: handcrafted ---- */
+    .footer-handmade {
+      background: #1e1b18;
+      color: #d6cdc2;
+      padding: 4rem 2.5rem 2.5rem 2.5rem;
+      border-top: 8px solid var(--meadow);
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+    }
+    .footer-handmade h4 {
+      color: #f3efe8;
+      font-size: 1.2rem;
+      letter-spacing: 0.02em;
+      border-bottom: 2px solid #3d5245;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.2rem;
+    }
+    .footer-handmade a { display: block; margin: 0.3rem 0; color: #b6aa9c; transition: 0.2s; }
+    .footer-handmade a:hover { color: white; padding-left: 6px; }
+    .footer-bottom {
+      grid-column: 1 / -1;
+      border-top: 1px solid #3d3a36;
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      font-size: 0.8rem;
+      color: #8f8478;
+    }
+    .footer-bottom span { opacity: 0.7; }
+    .sitemap-inline { display: flex; flex-wrap: wrap; gap: 0.8rem 1.8rem; margin-top: 0.5rem; }
+    /* responsiveness */
+    @media (max-width: 1000px) {
+      .about-hero { grid-template-columns: 1fr; }
+      .about-story { grid-template-columns: 1fr; }
+      .principles-grid { grid-template-columns: 1fr; }
+      .footer-handmade { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 720px) {
+      .nav-floating { flex-wrap: wrap; gap: 1rem; }
+      .nav-links { flex-wrap: wrap; gap: 1.2rem; }
+      .footer-handmade { grid-template-columns: 1fr; }
+      .team-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .team-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <!-- floating navigation (same as home) -->
+  <nav class="nav-floating">
+    <div class="logo-mark">Quillan Cookies Meadow<span>✧</span></div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html" style="border-bottom-color: var(--meadow);">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="terms.html">Terms Of Privacy</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="cookies.html">Cookies Policy</a>
+      <a href="categories.html">Categories</a>
+      <a href="disclamier.html">Disclaimer</a>
+    </div>
+    <div class="nav-extra">
+      <span class="search-icon">⌕ search</span>
+    </div>
+  </nav>
+
+  <!-- about hero -->
+  <section class="about-hero">
+    <div>
+      <h1>About <i>the</i> <br>Meadow</h1>
+      <p>Quillan Cookie Meadow is a handcrafted knowledge journal. We publish long-form essays, editorial deep dives, and quiet reflections — with an emphasis on depth over velocity.</p>
+    </div>
+    <div class="about-visual"></div>
+  </section>
+
+  <!-- story & principles -->
+  <section class="about-story">
+    <div>
+      <h2>Our story</h2>
+      <p>Founded in 2024, the Meadow grew from a simple observation: the internet is full of noise, but starved of attention. We wanted a space where ideas could take root, grow slowly, and be harvested with care.</p>
+      <p>Today, we are a small collective of writers, editors, and designers who believe that editorial craft is a form of hospitality. Every article is built with the same attention we give to a garden — soil, seed, sun, and silence.</p>
+      <ul>
+        <li>We publish 2–3 long-form pieces per week.</li>
+        <li>Each essay undergoes a 3-stage editorial review.</li>
+        <li>We use a minimalist visual palette to honour the text.</li>
+      </ul>
+    </div>
+    <div>
+      <h2>Guiding principles</h2>
+      <div class="principles-grid">
+        <div class="principle-card">
+          <h3>Depth</h3>
+          <p>Articles are at least 1500 words, with layered structure and evidence. We never sacrifice substance for speed.</p>
+        </div>
+        <div class="principle-card">
+          <h3>Clarity</h3>
+          <p>We write for humans, not algorithms. Jargon is avoided; complexity is explained with grace.</p>
+        </div>
+        <div class="principle-card">
+          <h3>Quiet</h3>
+          <p>No pop-ups, no autoplay, no distraction. The page is a reading room.</p>
+        </div>
+        <div class="principle-card">
+          <h3>Diversity</h3>
+          <p>We actively seek voices from different disciplines — ecology, history, philosophy, literature, and art.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- team section -->
+  <section class="team-section">
+    <h2>Meadow keepers <small>✧ contributors</small></h2>
+    <div class="team-grid">
+      <div class="team-member">
+        <div class="avatar">🌾</div>
+        <h4>Quillan Meadow</h4>
+        <div class="role">Editor · founder</div>
+        <p style="font-size:0.9rem; color:#3d3a36; margin-top:0.5rem;">Writer and ecologist. Believes in the power of slow reading.</p>
+      </div>
+      <div class="team-member">
+        <div class="avatar">📖</div>
+        <h4>Elara Finch</h4>
+        <div class="role">Senior editor</div>
+        <p style="font-size:0.9rem; color:#3d3a36; margin-top:0.5rem;">Former literary agent. Loves marginalia and blue ink.</p>
+      </div>
+      <div class="team-member">
+        <div class="avatar">✧</div>
+        <h4>Milo Thorne</h4>
+        <div class="role">Design &amp; typography</div>
+        <p style="font-size:0.9rem; color:#3d3a36; margin-top:0.5rem;">Keeps the Meadow visually quiet. Obsessed with serifs.</p>
+      </div>
+      <div class="team-member">
+        <div class="avatar">🌿</div>
+        <h4>Iris Song</h4>
+        <div class="role">Contributing writer</div>
+        <p style="font-size:0.9rem; color:#3d3a36; margin-top:0.5rem;">Writes on philosophy, attention, and the art of walking.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- footer: handmade with all pages -->
+  <footer class="footer-handmade">
+    <div>
+      <h4>Quillan Cookie Meadow</h4>
+      <p style="max-width: 280px; font-size: 0.9rem; line-height: 1.5; color: #b6aa9c;">A quiet corner for long-form editorial writing. Founded on the belief that depth is not a luxury but a necessity.</p>
+      <div style="margin-top: 1.2rem; display: flex; gap: 1.5rem;">
+        <span>✧</span><span>🌾</span><span>📖</span>
+      </div>
+    </div>
+    <div>
+      <h4>Pages</h4>
+      <a href="index.html">Home</a>
+      <a href="#">Blog</a>
+      <a href="#">Categories</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="#">Authors</a>
+      <a href="#">Archive</a>
+    </div>
+    <div>
+      <h4>Policies</h4>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms &amp; Conditions</a>
+      <a href="cookies.html">Cookie Policy</a>
+      <a href="disclamier.html">Disclaimer</a>
+      <a href="#">Editorial Policy</a>
+    </div>
+    <div>
+      <h4>Resources</h4>
+      <a href="#">Resources</a>
+      <a href="#">FAQ</a>
+      <a href="#">Sitemap</a>
+      <div class="sitemap-inline">
+        <span style="font-size:0.7rem; opacity:0.6;">✧ style guide</span>
+        <span style="font-size:0.7rem; opacity:0.6;">✧ colophon</span>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Quillan Cookie Meadow — handcrafted with attention.</span>
+      <span>🌱 v2.0 · editorial journal</span>
+    </div>
+  </footer>
+</div>
+</body>
+</html>

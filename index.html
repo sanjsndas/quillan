@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quillan Cookie Meadow · authority journal</title>
+  <meta name="description" content="Quillan Cookie Meadow — a handcrafted knowledge journal. Long-form insights, editorial depth, and quiet design.">
+  <!-- fonts & reset -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      background: #f7f3ec;
+      color: #1e1b18;
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      padding: 0 1.5rem;
+    }
+    .wrap {
+      max-width: 1440px;
+      margin: 0 auto;
+      background: #fcf9f5;
+      box-shadow: 0 0 80px rgba(0,0,0,0.02);
+    }
+    /* brand identity */
+    :root {
+      --ink: #1e1b18;
+      --paper: #fcf9f5;
+      --meadow: #6f8c7a;
+      --meadow-light: #b6cebe;
+      --quill: #dac5b0;
+      --cookie: #e7d4c0;
+      --border-soft: #e4dbd0;
+      --shadow-card: 0 24px 48px -12px rgba(30, 27, 24, 0.08);
+    }
+    h1, h2, h3, h4 {
+      font-family: 'DM Serif Display', serif;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    /* ---- navigation: floating, asymmetrical ---- */
+    .nav-floating {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 2.5rem 1.2rem 2.5rem;
+      border-bottom: 1px solid var(--border-soft);
+      background: var(--paper);
+      position: relative;
+      z-index: 10;
+    }
+    .logo-mark {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.9rem;
+      letter-spacing: -0.04em;
+      background: var(--meadow);
+      color: white;
+      padding: 0.3rem 1.2rem 0.2rem 1.2rem;
+      border-radius: 50px 8px 50px 8px;
+      transform: rotate(-0.5deg);
+      box-shadow: 0 6px 0 #3d5245;
+    }
+    .logo-mark span {
+      background: var(--quill);
+      color: var(--ink);
+      font-size: 1rem;
+      padding: 0.1rem 0.7rem;
+      border-radius: 40px;
+      margin-left: 0.3rem;
+      transform: rotate(2deg);
+    }
+    .nav-links {
+      display: flex;
+      gap: 2.8rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #3d3a36;
+    }
+    .nav-links a { transition: 0.2s; border-bottom: 2px solid transparent; padding-bottom: 4px; }
+    .nav-links a:hover { border-bottom-color: var(--meadow); color: #1e1b18; }
+    .nav-extra {
+      display: flex;
+      gap: 1.2rem;
+      align-items: center;
+    }
+    .nav-extra .search-icon {
+      background: var(--cookie);
+      padding: 0.6rem 1rem;
+      border-radius: 60px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: 0.2s;
+      cursor: default;
+    }
+    /* ---- hero: editorial notebook ---- */
+    .hero-notebook {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3rem;
+      padding: 4rem 2.5rem 4rem 2.5rem;
+      background: #f3efe8;
+      border-bottom: 2px solid #e3d8cb;
+      position: relative;
+    }
+    .hero-notebook::after {
+      content: '✧';
+      position: absolute;
+      bottom: -1.2rem;
+      right: 3rem;
+      font-size: 2rem;
+      color: var(--meadow);
+      opacity: 0.3;
+    }
+    .hero-text h1 {
+      font-size: 4rem;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      color: #1e1b18;
+    }
+    .hero-text h1 i { font-style: italic; color: var(--meadow); }
+    .hero-text p {
+      font-size: 1.2rem;
+      max-width: 90%;
+      color: #3d3a36;
+      border-left: 6px solid var(--quill);
+      padding-left: 1.8rem;
+      margin-bottom: 2.2rem;
+    }
+    .hero-meta {
+      display: flex;
+      gap: 2.5rem;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: #5c544c;
+    }
+    .hero-image {
+      background: #d5cdc0;
+      border-radius: 60px 8px 60px 8px;
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      transform: rotate(0.6deg);
+      min-height: 240px;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300"><rect width="400" height="300" fill="%23b6cebe"/><circle cx="120" cy="120" r="50" fill="%23dac5b0" opacity="0.5"/><circle cx="280" cy="180" r="70" fill="%23e7d4c0" opacity="0.5"/><path d="M80 240 L200 120 L320 240" stroke="%236f8c7a" stroke-width="6" fill="none"/></svg>');
+      background-size: cover;
+      background-blend-mode: overlay;
+    }
+    /* ---- knowledge grid (instead of standard featured) ---- */
+    .knowledge-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      padding: 4.5rem 2.5rem 3.5rem 2.5rem;
+      background: var(--paper);
+      border-bottom: 1px solid var(--border-soft);
+    }
+    .knowledge-card {
+      background: #f6f2eb;
+      padding: 2.2rem 1.8rem 2rem 1.8rem;
+      border-radius: 80px 12px 80px 12px;
+      box-shadow: var(--shadow-card);
+      transition: 0.25s;
+      border: 1px solid #e8ded2;
+    }
+    .knowledge-card:nth-child(2) { background: #ede7df; border-radius: 12px 80px 12px 80px; }
+    .knowledge-card:nth-child(3) { background: #e8e0d6; border-radius: 40px 8px 40px 8px; }
+    .knowledge-card h3 {
+      font-size: 1.8rem;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .knowledge-card .badge {
+      background: var(--meadow);
+      color: white;
+      font-size: 0.7rem;
+      padding: 0.2rem 1rem;
+      border-radius: 40px;
+      letter-spacing: 0.03em;
+      font-weight: 600;
+    }
+    .knowledge-card p { font-size: 0.98rem; color: #3d3a36; margin: 0.8rem 0 1.4rem 0; }
+    .read-link {
+      font-weight: 600;
+      border-bottom: 3px solid var(--quill);
+      padding-bottom: 2px;
+      transition: 0.2s;
+    }
+    .read-link:hover { border-bottom-color: var(--meadow); }
+    /* ---- editorial picks (longform teaser) ---- */
+    .editorial-picks {
+      padding: 4rem 2.5rem 3rem 2.5rem;
+      background: #f1ece4;
+      border-bottom: 2px dotted #dacfc2;
+    }
+    .editorial-picks h2 {
+      font-size: 2.6rem;
+      margin-bottom: 0.5rem;
+      display: flex;
+      gap: 1rem;
+    }
+    .editorial-picks h2 small {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      align-self: flex-end;
+      color: #5c544c;
+    }
+    .pick-article {
+      display: grid;
+      grid-template-columns: 1.5fr 0.9fr;
+      gap: 2.5rem;
+      margin: 2rem 0 0 0;
+      background: var(--paper);
+      padding: 2.5rem 2.5rem 2.5rem 2.5rem;
+      border-radius: 120px 12px 120px 12px;
+      box-shadow: 0 30px 40px -18px rgba(30,27,24,0.1);
+      border: 1px solid #ddd2c4;
+    }
+    .pick-content h3 {
+      font-size: 2.2rem;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+    .pick-content .excerpt {
+      font-size: 1rem;
+      color: #3d3a36;
+      border-left: 4px solid var(--meadow-light);
+      padding-left: 1.2rem;
+      margin: 1rem 0 1.4rem 0;
+    }
+    .pick-stats {
+      display: flex;
+      gap: 2rem;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      color: #5c544c;
+    }
+    .pick-image {
+      background: #cfc6b8;
+      border-radius: 60px 8px 60px 8px;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" width="300" height="200"><rect width="300" height="200" fill="%23b6cebe"/><circle cx="100" cy="90" r="40" fill="%23dac5b0" opacity="0.7"/><circle cx="220" cy="130" r="30" fill="%23e7d4c0" opacity="0.7"/><rect x="60" y="150" width="180" height="16" fill="%236f8c7a" opacity="0.4"/></svg>');
+      background-size: cover;
+      min-height: 150px;
+    }
+    /* ---- article sample (long-form) ---- */
+    .article-full {
+      padding: 4rem 2.5rem 4rem 2.5rem;
+      background: #fcf9f5;
+      border-bottom: 1px solid #e4dbd0;
+    }
+    .article-full h2 {
+      font-size: 2.8rem;
+      margin-bottom: 0.6rem;
+      border-bottom: 4px solid var(--cookie);
+      padding-bottom: 0.3rem;
+      display: inline-block;
+    }
+    .article-full .byline {
+      display: flex;
+      gap: 2rem;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      color: #5c544c;
+      margin: 0.8rem 0 1.8rem 0;
+    }
+    .article-body {
+      columns: 2 300px;
+      column-gap: 3rem;
+      margin-top: 1.5rem;
+    }
+    .article-body p {
+      margin-bottom: 1.6rem;
+      font-size: 1.02rem;
+      break-inside: avoid;
+    }
+    .article-body h3 {
+      font-size: 1.8rem;
+      margin: 1.8rem 0 0.8rem 0;
+      column-span: all;
+      border-left: 6px solid var(--meadow);
+      padding-left: 1.2rem;
+    }
+    .article-body ul, .article-body ol { margin: 1rem 0 1.5rem 2rem; }
+    .article-body table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+      font-size: 0.95rem;
+      column-span: all;
+      background: #f3efe8;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+    .article-body th { background: var(--meadow); color: white; padding: 0.8rem; text-align: left; }
+    .article-body td { border-bottom: 1px solid #ddd2c4; padding: 0.8rem; }
+    .faq-block {
+      background: #ede7df;
+      padding: 2rem 2rem 1.8rem 2rem;
+      border-radius: 40px 8px 40px 8px;
+      margin: 2rem 0;
+      column-span: all;
+    }
+    .faq-block details { margin: 0.8rem 0; }
+    .faq-block summary { font-weight: 600; cursor: pointer; padding: 0.3rem 0; }
+    /* ---- footer: handcrafted ---- */
+    .footer-handmade {
+      background: #1e1b18;
+      color: #d6cdc2;
+      padding: 4rem 2.5rem 2.5rem 2.5rem;
+      border-top: 8px solid var(--meadow);
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+    }
+    .footer-handmade h4 {
+      color: #f3efe8;
+      font-size: 1.2rem;
+      letter-spacing: 0.02em;
+      border-bottom: 2px solid #3d5245;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.2rem;
+    }
+    .footer-handmade a { display: block; margin: 0.3rem 0; color: #b6aa9c; transition: 0.2s; }
+    .footer-handmade a:hover { color: white; padding-left: 6px; }
+    .footer-bottom {
+      grid-column: 1 / -1;
+      border-top: 1px solid #3d3a36;
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      font-size: 0.8rem;
+      color: #8f8478;
+    }
+    .footer-bottom span { opacity: 0.7; }
+    /* responsiveness */
+    @media (max-width: 1000px) {
+      .hero-notebook { grid-template-columns: 1fr; }
+      .knowledge-grid { grid-template-columns: 1fr 1fr; }
+      .pick-article { grid-template-columns: 1fr; }
+      .footer-handmade { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 720px) {
+      .knowledge-grid { grid-template-columns: 1fr; }
+      .nav-floating { flex-wrap: wrap; gap: 1rem; }
+      .nav-links { flex-wrap: wrap; gap: 1.2rem; }
+      .article-body { columns: 1; }
+      .footer-handmade { grid-template-columns: 1fr; }
+    }
+    /* extra: sitemap etc in footer */
+    .sitemap-inline { display: flex; flex-wrap: wrap; gap: 0.8rem 1.8rem; margin-top: 0.5rem; }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <!-- floating navigation -->
+  <nav class="nav-floating">
+    <div class="logo-mark">Quillan Cookies Meadow<span>✧</span></div>
+    <div class="nav-links">
+      <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="terms.html">Terms Of Privacy</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+					<li><a href="cookies.html">Cookies Policy</a></li>
+					 <li><a href="categories.html">CATEGORIES</a></li>
+					<li><a href="disclamier.html">DISCLAMIER</a></li> 
+    </div>
+    <div class="nav-extra">
+      <span class="search-icon">⌕ search</span>
+    </div>
+  </nav>
+
+  <!-- hero notebook -->
+  <section class="hero-notebook">
+    <div class="hero-text">
+      <h1>Meadow <i>&</i> <br>Quill</h1>
+      <p>An authority journal for quiet minds. Long-form essays, editorial depth, and the craft of slow reading.</p>
+      <div class="hero-meta">
+        <span>✦ 8 min read</span>
+        <span>📖 4 articles</span>
+        <span>🌿 12 contributors</span>
+      </div>
+    </div>
+    <div class="hero-image"></div>
+  </section>
+
+  <!-- knowledge grid (instead of featured posts) -->
+  <section class="knowledge-grid">
+    <div class="knowledge-card">
+      <h3>📘 <span class="badge">deep</span></h3>
+      <p>From soil to syntax: the ecology of attention in the age of distraction.</p>
+      <a href="#" class="read-link">read essay →</a>
+    </div>
+    <div class="knowledge-card">
+      <h3>🧠 <span class="badge">practice</span></h3>
+      <p>How to keep a writer’s commonplace book: a step-by-step guide with examples.</p>
+      <a href="#" class="read-link">read guide →</a>
+    </div>
+    <div class="knowledge-card">
+      <h3>🌾 <span class="badge">craft</span></h3>
+      <p>Cookie meadows & the art of narrative foraging — a short history.</p>
+      <a href="#" class="read-link">read story →</a>
+    </div>
+  </section>
+
+  <!-- editorial picks (featured article) -->
+  <section class="editorial-picks">
+    <h2>Editorial pick <small>✧ this week</small></h2>
+    <div class="pick-article">
+      <div class="pick-content">
+        <h3>On the virtue of unhurried thought</h3>
+        <div class="excerpt">“Attention is not a resource; it is a relationship. We cultivate it with the same care we give to a meadow.” — an essay on slow cognition.</div>
+        <div class="pick-stats">
+          <span>📅 22 July 2026</span>
+          <span>⏳ 12 min</span>
+          <span>🏷️ philosophy</span>
+        </div>
+        <a href="#" class="read-link" style="margin-top:1.2rem; display:inline-block;">continue reading →</a>
+      </div>
+      <div class="pick-image"></div>
+    </div>
+  </section>
+
+  <!-- full long-form article sample (authority) -->
+  <section class="article-full">
+    <h2>The Meadow Method: a framework for editorial clarity</h2>
+    <div class="byline"><span>by Quillan Meadow · 22 July 2026</span> <span>✧ 8 min read</span></div>
+    <div class="article-body">
+      <p>In the landscape of digital writing, most content is grown in monocultures — repetitive, thin, and quickly harvested. But a meadow is different. It is diverse, layered, and resilient. The Meadow Method is an editorial philosophy that treats every article as a living ecosystem of ideas, evidence, and voice.</p>
+      <h3>1. The four layers of a meadow article</h3>
+      <p>Every piece we publish contains four distinct strata: the topsoil (hook and context), the root zone (argument and evidence), the canopy (synthesis and implications), and the seed bank (actionable takeaways). This structure ensures depth without sacrificing readability.</p>
+      <ul>
+        <li><strong>Topsoil:</strong> opens with a narrative or question that grounds the reader.</li>
+        <li><strong>Root zone:</strong> develops the thesis with examples, data, and counterpoints.</li>
+        <li><strong>Canopy:</strong> broadens the perspective, connecting to larger patterns.</li>
+        <li><strong>Seed bank:</strong> offers specific practices, prompts, or further reading.</li>
+      </ul>
+      <h3>2. Comparison: Meadow vs. Standard blog</h3>
+      <table>
+        <tr><th>Aspect</th><th>Meadow article</th><th>Standard blog</th></tr>
+        <tr><td>Length</td><td>1500–3000 words</td><td>600–1000 words</td></tr>
+        <tr><td>Structure</td><td>layered, non-linear</td><td>linear listicle</td></tr>
+        <tr><td>Citations</td><td>embedded &amp; contextual</td><td>sparse or absent</td></tr>
+        <tr><td>Reader takeaway</td><td>shift in perspective</td><td>quick tip</td></tr>
+      </table>
+      <h3>3. Common mistakes in editorial writing</h3>
+      <p>Many writers confuse information with insight. They pile up facts without a guiding thread. Another mistake is neglecting the 'seed bank' — leaving the reader with nothing to do or think about after closing the page. Finally, using too many images breaks the contemplative rhythm; we use <strong>maximum 4 images</strong> per article, each with purpose.</p>
+      <div class="faq-block">
+        <h4 style="font-family: 'Inter', sans-serif; font-weight: 600; letter-spacing: 0.02em;">❓ FAQ — Meadow Method</h4>
+        <details><summary>How long should a meadow article be?</summary>Between 1500 and 3000 words, though some deep dives reach 4000.</details>
+        <details><summary>What about images?</summary>We use 1 hero, 1 category, 1 featured, and 1 infographic — no more.</details>
+        <details><summary>Is this approach SEO-friendly?</summary>Absolutely. The structure and depth naturally satisfy search intent and dwell time.</details>
+      </div>
+      <h3>4. Step-by-step: writing your own meadow piece</h3>
+      <ol>
+        <li><strong>Choose a living question</strong> — not a statement, but a genuine inquiry.</li>
+        <li><strong>Gather seeds</strong> — collect notes, quotes, and counterarguments.</li>
+        <li><strong>Draft the root zone first</strong> — build the core argument.</li>
+        <li><strong>Weave in the topsoil and canopy</strong> — frame and expand.</li>
+        <li><strong>Plant the seed bank</strong> — offer 3–5 actionable prompts.</li>
+      </ol>
+      <p>This method has been used by our contributors to produce some of the most referenced essays on slow media. It prioritises substance over novelty, and clarity over cleverness.</p>
+    </div>
+  </section>
+
+  <!-- footer: handmade with all pages -->
+  <footer class="footer-handmade">
+    <div>
+      <h4>Quillan Cookie Meadow</h4>
+      <p style="max-width: 280px; font-size: 0.9rem; line-height: 1.5; color: #b6aa9c;">A quiet corner for long-form editorial writing. Founded on the belief that depth is not a luxury but a necessity.</p>
+      <div style="margin-top: 1.2rem; display: flex; gap: 1.5rem;">
+        <span>✧</span><span>🌾</span><span>📖</span>
+      </div>
+    </div>
+    <div>
+      <h4>Pages</h4>
+      <a href="#">Home</a>
+      <a href="#">Blog</a>
+      <a href="#">Categories</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+      <a href="#">Authors</a>
+      <a href="#">Archive</a>
+    </div>
+    <div>
+      <h4>Policies</h4>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms &amp; Conditions</a>
+      <a href="#">Cookie Policy</a>
+      <a href="#">Disclaimer</a>
+      <a href="#">Editorial Policy</a>
+    </div>
+    <div>
+      <h4>Resources</h4>
+      <a href="#">Resources</a>
+      <a href="#">FAQ</a>
+      <a href="#">Sitemap</a>
+      <div class="sitemap-inline">
+        <span style="font-size:0.7rem; opacity:0.6;">✧ style guide</span>
+        <span style="font-size:0.7rem; opacity:0.6;">✧ colophon</span>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Quillan Cookie Meadow — handcrafted with attention.</span>
+      <span>🌱 v2.0 · editorial journal</span>
+    </div>
+  </footer>
+</div>
+</body>
+</html>

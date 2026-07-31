@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Service · Quillan Cookie Meadow</title>
+  <meta name="description" content="Terms and conditions for Quillan Cookie Meadow — editorial journal.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      background: #f7f3ec;
+      color: #1e1b18;
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      padding: 0 1.5rem;
+    }
+    .wrap {
+      max-width: 1440px;
+      margin: 0 auto;
+      background: #fcf9f5;
+      box-shadow: 0 0 80px rgba(0,0,0,0.02);
+    }
+    :root {
+      --ink: #1e1b18;
+      --paper: #fcf9f5;
+      --meadow: #6f8c7a;
+      --meadow-light: #b6cebe;
+      --quill: #dac5b0;
+      --cookie: #e7d4c0;
+      --border-soft: #e4dbd0;
+      --shadow-card: 0 24px 48px -12px rgba(30, 27, 24, 0.08);
+    }
+    h1, h2, h3, h4 {
+      font-family: 'DM Serif Display', serif;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    /* ---- navigation: floating, asymmetrical ---- */
+    .nav-floating {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 2.5rem 1.2rem 2.5rem;
+      border-bottom: 1px solid var(--border-soft);
+      background: var(--paper);
+      position: relative;
+      z-index: 10;
+    }
+    .logo-mark {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.9rem;
+      letter-spacing: -0.04em;
+      background: var(--meadow);
+      color: white;
+      padding: 0.3rem 1.2rem 0.2rem 1.2rem;
+      border-radius: 50px 8px 50px 8px;
+      transform: rotate(-0.5deg);
+      box-shadow: 0 6px 0 #3d5245;
+    }
+    .logo-mark span {
+      background: var(--quill);
+      color: var(--ink);
+      font-size: 1rem;
+      padding: 0.1rem 0.7rem;
+      border-radius: 40px;
+      margin-left: 0.3rem;
+      transform: rotate(2deg);
+    }
+    .nav-links {
+      display: flex;
+      gap: 2.8rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #3d3a36;
+    }
+    .nav-links a { transition: 0.2s; border-bottom: 2px solid transparent; padding-bottom: 4px; }
+    .nav-links a:hover { border-bottom-color: var(--meadow); color: #1e1b18; }
+    .nav-extra {
+      display: flex;
+      gap: 1.2rem;
+      align-items: center;
+    }
+    .nav-extra .search-icon {
+      background: var(--cookie);
+      padding: 0.6rem 1rem;
+      border-radius: 60px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: 0.2s;
+      cursor: default;
+    }
+    /* ---- terms hero ---- */
+    .terms-hero {
+      padding: 4rem 2.5rem 2.5rem 2.5rem;
+      background: #f3efe8;
+      border-bottom: 2px solid #e3d8cb;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3rem;
+    }
+    .terms-hero h1 {
+      font-size: 4rem;
+      line-height: 1.1;
+      margin-bottom: 1.2rem;
+    }
+    .terms-hero h1 i { color: var(--meadow); font-style: italic; }
+    .terms-hero p {
+      font-size: 1.2rem;
+      color: #3d3a36;
+      border-left: 6px solid var(--quill);
+      padding-left: 1.8rem;
+      max-width: 90%;
+    }
+    .terms-visual {
+      background: #d5cdc0;
+      border-radius: 60px 8px 60px 8px;
+      min-height: 200px;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300"><rect width="400" height="300" fill="%23b6cebe"/><circle cx="140" cy="110" r="60" fill="%23dac5b0" opacity="0.6"/><circle cx="270" cy="180" r="50" fill="%23e7d4c0" opacity="0.6"/><path d="M70 220 L200 100 L330 220" stroke="%236f8c7a" stroke-width="8" fill="none"/></svg>');
+      background-size: cover;
+      background-blend-mode: overlay;
+      box-shadow: var(--shadow-card);
+      transform: rotate(0.4deg);
+    }
+    /* ---- terms content ---- */
+    .terms-content {
+      padding: 3rem 2.5rem 4rem 2.5rem;
+      background: var(--paper);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+    .terms-content h2 {
+      font-size: 2.2rem;
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+      border-bottom: 4px solid var(--cookie);
+      padding-bottom: 0.3rem;
+      display: inline-block;
+    }
+    .terms-content p { margin-bottom: 1.2rem; color: #2d2925; }
+    .terms-content ul { list-style: none; margin: 1rem 0; }
+    .terms-content ul li { padding: 0.5rem 0; border-bottom: 1px dotted #ddd2c4; display: flex; gap: 0.8rem; }
+    .terms-content ul li::before { content: "✧"; color: var(--meadow); }
+    .terms-card {
+      background: #f6f2eb;
+      padding: 1.8rem 2rem;
+      border-radius: 40px 8px 40px 8px;
+      border: 1px solid #e8ded2;
+      margin-bottom: 1.5rem;
+    }
+    .terms-card h3 { font-size: 1.6rem; margin-bottom: 0.6rem; }
+    .terms-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.8rem;
+      margin-top: 0.5rem;
+    }
+    .terms-grid .terms-card { margin-bottom: 0; }
+    /* ---- footer: handcrafted ---- */
+    .footer-handmade {
+      background: #1e1b18;
+      color: #d6cdc2;
+      padding: 4rem 2.5rem 2.5rem 2.5rem;
+      border-top: 8px solid var(--meadow);
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+    }
+    .footer-handmade h4 {
+      color: #f3efe8;
+      font-size: 1.2rem;
+      letter-spacing: 0.02em;
+      border-bottom: 2px solid #3d5245;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.2rem;
+    }
+    .footer-handmade a { display: block; margin: 0.3rem 0; color: #b6aa9c; transition: 0.2s; }
+    .footer-handmade a:hover { color: white; padding-left: 6px; }
+    .footer-bottom {
+      grid-column: 1 / -1;
+      border-top: 1px solid #3d3a36;
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      font-size: 0.8rem;
+      color: #8f8478;
+    }
+    .footer-bottom span { opacity: 0.7; }
+    .sitemap-inline { display: flex; flex-wrap: wrap; gap: 0.8rem 1.8rem; margin-top: 0.5rem; }
+    /* responsiveness */
+    @media (max-width: 1000px) {
+      .terms-hero { grid-template-columns: 1fr; }
+      .terms-content { grid-template-columns: 1fr; }
+      .terms-grid { grid-template-columns: 1fr; }
+      .footer-handmade { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 720px) {
+      .nav-floating { flex-wrap: wrap; gap: 1rem; }
+      .nav-links { flex-wrap: wrap; gap: 1.2rem; }
+      .footer-handmade { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .terms-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <!-- floating navigation (same as about) -->
+  <nav class="nav-floating">
+    <div class="logo-mark">Quillan Cookies Meadow<span>✧</span></div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="terms.html" style="border-bottom-color: var(--meadow);">Terms Of Service</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="cookies.html">Cookies Policy</a>
+      <a href="categories.html">Categories</a>
+      <a href="disclamier.html">Disclaimer</a>
+    </div>
+    <div class="nav-extra">
+      <span class="search-icon">⌕ search</span>
+    </div>
+  </nav>
+
+  <!-- terms hero -->
+  <section class="terms-hero">
+    <div>
+      <h1>Terms of <i>Service</i></h1>
+      <p>Your use of the Meadow is governed by these terms. They are crafted with the same care we give to our essays — clear, fair, and respectful of your attention.</p>
+    </div>
+    <div class="terms-visual"></div>
+  </section>
+
+  <!-- terms content -->
+  <section class="terms-content">
+    <div>
+      <h2>1. Acceptance</h2>
+      <p>By accessing or using Quillan Cookie Meadow, you agree to be bound by these Terms of Service. If you do not agree, please do not use the site.</p>
+      <p>We reserve the right to update these terms at any time. Changes become effective upon posting. Continued use constitutes acceptance.</p>
+
+      <h2 style="margin-top: 2rem;">2. Content &amp; Use</h2>
+      <p>All editorial content, essays, and visuals are the property of Quillan Cookie Meadow unless otherwise noted. You may read, share, and link to our content for personal, non‑commercial purposes.</p>
+      <ul>
+        <li>You may not republish, sell, or distribute our work without explicit permission.</li>
+        <li>We welcome quotations and excerpts, provided you credit the Meadow and link back.</li>
+        <li>User-generated comments are subject to moderation and must be respectful.</li>
+      </ul>
+
+      <h2 style="margin-top: 2rem;">3. Privacy &amp; Data</h2>
+      <p>We collect minimal data to improve your experience. Our Privacy Policy explains what we collect and how we protect it. We do not sell or trade your personal information.</p>
+    </div>
+
+    <div>
+      <h2>4. User Responsibilities</h2>
+      <p>You are responsible for your use of the site. You agree not to:</p>
+      <ul>
+        <li>Use the site for unlawful purposes or to harass others.</li>
+        <li>Attempt to disrupt or damage the site’s infrastructure.</li>
+        <li>Post spam, harmful content, or false information.</li>
+        <li>Misrepresent your identity or affiliation.</li>
+      </ul>
+
+      <h2 style="margin-top: 2rem;">5. Intellectual Property</h2>
+      <p>All trademarks, logos, and original content on Quillan Cookie Meadow are owned by the Meadow or its contributors. Unauthorized use is prohibited.</p>
+      <p>If you believe your work has been used in a way that infringes copyright, please contact us with details.</p>
+
+      <div class="terms-grid">
+        <div class="terms-card">
+          <h3>6. Disclaimer</h3>
+          <p>Content is provided “as is” for informational and editorial purposes. We do not guarantee accuracy, completeness, or suitability for your specific needs.</p>
+        </div>
+        <div class="terms-card">
+          <h3>7. Limitation</h3>
+          <p>To the fullest extent permitted by law, the Meadow shall not be liable for any indirect, incidental, or consequential damages arising from your use.</p>
+        </div>
+      </div>
+
+      <h2 style="margin-top: 1.5rem;">8. Governing Law</h2>
+      <p>These terms are governed by the laws of the Commonwealth of Virginia, without regard to conflict of law principles. Any disputes shall be resolved in the courts of Virginia.</p>
+
+      <p style="margin-top: 1.2rem; border-top: 2px solid var(--cookie); padding-top: 1.2rem;"><strong>Last updated:</strong> 22 July 2026</p>
+    </div>
+  </section>
+
+  <!-- footer: same as about -->
+  <footer class="footer-handmade">
+    <div>
+      <h4>Quillan Cookie Meadow</h4>
+      <p style="max-width: 280px; font-size: 0.9rem; line-height: 1.5; color: #b6aa9c;">A quiet corner for long-form editorial writing. Founded on the belief that depth is not a luxury but a necessity.</p>
+      <div style="margin-top: 1.2rem; display: flex; gap: 1.5rem;">
+        <span>✧</span><span>🌾</span><span>📖</span>
+      </div>
+    </div>
+    <div>
+      <h4>Pages</h4>
+      <a href="index.html">Home</a>
+      <a href="#">Blog</a>
+      <a href="#">Categories</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="#">Authors</a>
+      <a href="#">Archive</a>
+    </div>
+    <div>
+      <h4>Policies</h4>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms &amp; Conditions</a>
+      <a href="cookies.html">Cookie Policy</a>
+      <a href="disclamier.html">Disclaimer</a>
+      <a href="#">Editorial Policy</a>
+    </div>
+    <div>
+      <h4>Resources</h4>
+      <a href="#">Resources</a>
+      <a href="#">FAQ</a>
+      <a href="#">Sitemap</a>
+      <div class="sitemap-inline">
+        <span style="font-size:0.7rem; opacity:0.6;">✧ style guide</span>
+        <span style="font-size:0.7rem; opacity:0.6;">✧ colophon</span>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Quillan Cookie Meadow — handcrafted with attention.</span>
+      <span>🌱 v2.0 · editorial journal</span>
+    </div>
+  </footer>
+</div>
+</body>
+</html>

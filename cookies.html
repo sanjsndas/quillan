@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quillan Cookie Meadow · Cookies Policy</title>
+  <meta name="description" content="Quillan Cookie Meadow — a handcrafted knowledge journal. Long-form insights, editorial depth, and quiet design.">
+  <!-- fonts & reset -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      background: #f7f3ec;
+      color: #1e1b18;
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      padding: 0 1.5rem;
+    }
+    .wrap {
+      max-width: 1440px;
+      margin: 0 auto;
+      background: #fcf9f5;
+      box-shadow: 0 0 80px rgba(0,0,0,0.02);
+    }
+    /* brand identity */
+    :root {
+      --ink: #1e1b18;
+      --paper: #fcf9f5;
+      --meadow: #6f8c7a;
+      --meadow-light: #b6cebe;
+      --quill: #dac5b0;
+      --cookie: #e7d4c0;
+      --border-soft: #e4dbd0;
+      --shadow-card: 0 24px 48px -12px rgba(30, 27, 24, 0.08);
+    }
+    h1, h2, h3, h4 {
+      font-family: 'DM Serif Display', serif;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    /* ---- navigation: floating, asymmetrical ---- */
+    .nav-floating {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 2.5rem 1.2rem 2.5rem;
+      border-bottom: 1px solid var(--border-soft);
+      background: var(--paper);
+      position: relative;
+      z-index: 10;
+    }
+    .logo-mark {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.9rem;
+      letter-spacing: -0.04em;
+      background: var(--meadow);
+      color: white;
+      padding: 0.3rem 1.2rem 0.2rem 1.2rem;
+      border-radius: 50px 8px 50px 8px;
+      transform: rotate(-0.5deg);
+      box-shadow: 0 6px 0 #3d5245;
+    }
+    .logo-mark span {
+      background: var(--quill);
+      color: var(--ink);
+      font-size: 1rem;
+      padding: 0.1rem 0.7rem;
+      border-radius: 40px;
+      margin-left: 0.3rem;
+      transform: rotate(2deg);
+    }
+    .nav-links {
+      display: flex;
+      gap: 2.8rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #3d3a36;
+    }
+    .nav-links a { transition: 0.2s; border-bottom: 2px solid transparent; padding-bottom: 4px; }
+    .nav-links a:hover { border-bottom-color: var(--meadow); color: #1e1b18; }
+    .nav-extra {
+      display: flex;
+      gap: 1.2rem;
+      align-items: center;
+    }
+    .nav-extra .search-icon {
+      background: var(--cookie);
+      padding: 0.6rem 1rem;
+      border-radius: 60px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: 0.2s;
+      cursor: default;
+    }
+    
+    /* ---- Page Header (Hero) ---- */
+    .page-header {
+      padding: 4rem 2.5rem 2.5rem 2.5rem;
+      background: #f3efe8;
+      border-bottom: 1px solid var(--border-soft);
+    }
+    .page-header h1 {
+      font-size: 3.6rem;
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+      color: #1e1b18;
+    }
+    .page-header h1 i { font-style: italic; color: var(--meadow); }
+    .page-header p {
+      font-size: 1.15rem;
+      max-width: 70%;
+      color: #3d3a36;
+      border-left: 6px solid var(--quill);
+      padding-left: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    /* ---- Content area (like article-full but for policy) ---- */
+    .policy-content {
+      padding: 3rem 2.5rem 4rem 2.5rem;
+      background: #fcf9f5;
+    }
+    .policy-content h2 {
+      font-size: 2.2rem;
+      margin: 2.5rem 0 1rem 0;
+      border-bottom: 2px solid var(--cookie);
+      padding-bottom: 0.3rem;
+      display: inline-block;
+      font-family: 'DM Serif Display', serif;
+    }
+    .policy-content h3 {
+      font-size: 1.6rem;
+      margin: 2rem 0 0.8rem 0;
+      font-family: 'DM Serif Display', serif;
+    }
+    .policy-content p {
+      margin-bottom: 1.2rem;
+      font-size: 1.02rem;
+      max-width: 85ch;
+    }
+    .policy-content ul, .policy-content ol {
+      margin: 0.8rem 0 1.5rem 2rem;
+    }
+    .policy-content li {
+      margin-bottom: 0.4rem;
+    }
+    .policy-content .highlight-box {
+      background: #ede7df;
+      padding: 1.8rem 2rem;
+      border-radius: 40px 8px 40px 8px;
+      margin: 2rem 0;
+      border-left: 6px solid var(--meadow);
+    }
+    .policy-content table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+      font-size: 0.95rem;
+      background: #f3efe8;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+    .policy-content th { background: var(--meadow); color: white; padding: 0.8rem; text-align: left; }
+    .policy-content td { border-bottom: 1px solid #ddd2c4; padding: 0.8rem; }
+    .policy-content .last-updated {
+      font-size: 0.85rem;
+      color: #5c544c;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    /* ---- footer: handcrafted ---- */
+    .footer-handmade {
+      background: #1e1b18;
+      color: #d6cdc2;
+      padding: 4rem 2.5rem 2.5rem 2.5rem;
+      border-top: 8px solid var(--meadow);
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+    }
+    .footer-handmade h4 {
+      color: #f3efe8;
+      font-size: 1.2rem;
+      letter-spacing: 0.02em;
+      border-bottom: 2px solid #3d5245;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.2rem;
+    }
+    .footer-handmade a { display: block; margin: 0.3rem 0; color: #b6aa9c; transition: 0.2s; }
+    .footer-handmade a:hover { color: white; padding-left: 6px; }
+    .footer-bottom {
+      grid-column: 1 / -1;
+      border-top: 1px solid #3d3a36;
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      font-size: 0.8rem;
+      color: #8f8478;
+    }
+    .footer-bottom span { opacity: 0.7; }
+    .sitemap-inline { display: flex; flex-wrap: wrap; gap: 0.8rem 1.8rem; margin-top: 0.5rem; }
+    
+    /* responsiveness */
+    @media (max-width: 1000px) {
+      .footer-handmade { grid-template-columns: 1fr 1fr; }
+      .page-header p { max-width: 100%; }
+    }
+    @media (max-width: 720px) {
+      .nav-floating { flex-wrap: wrap; gap: 1rem; }
+      .nav-links { flex-wrap: wrap; gap: 1.2rem; }
+      .footer-handmade { grid-template-columns: 1fr; }
+      .policy-content { padding: 2rem 1.5rem; }
+      .page-header { padding: 2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <!-- floating navigation -->
+  <nav class="nav-floating">
+    <div class="logo-mark">Quillan Cookies Meadow<span>✧</span></div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="terms.html">Terms Of Privacy</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="cookies.html">Cookies Policy</a>
+      <a href="categories.html">Categories</a>
+      <a href="disclamier.html">Disclaimer</a>
+    </div>
+    <div class="nav-extra">
+      <span class="search-icon">⌕ search</span>
+    </div>
+  </nav>
+
+  <!-- page header -->
+  <section class="page-header">
+    <h1>Cookie <i>Policy</i></h1>
+    <p>How we use cookies to cultivate a better reading experience. Transparency, choice, and a pinch of simplicity.</p>
+  </section>
+
+  <!-- main policy content -->
+  <section class="policy-content">
+    <p><strong>Last updated:</strong> 22 July 2026</p>
+    
+    <p>At Quillan Cookie Meadow, we believe in clarity. This Cookie Policy explains what cookies are, how we use them on our website, and how you can manage them. Our approach is straightforward: we use minimal, essential cookies to keep the site running smoothly and to understand how our readers engage with our content — nothing more.</p>
+    
+    <div class="highlight-box">
+      <p><strong>📌 In short:</strong> We use only necessary and performance cookies. We do not sell your data, and we never use invasive tracking. You are in control.</p>
+    </div>
+
+    <h2>What are cookies?</h2>
+    <p>Cookies are small text files that are placed on your device (computer, tablet, or smartphone) when you visit a website. They are widely used to make websites work more efficiently, as well as to provide information to the site owners. Think of them as a short-term memory for your browser.</p>
+
+    <h2>How we use cookies</h2>
+    <p>We use cookies to enhance your experience on Quillan Cookie Meadow. Our use falls into the following categories:</p>
+    
+    <table>
+      <thead>
+        <tr><th>Type</th><th>Purpose</th><th>Examples</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Strictly Necessary</strong></td><td>These are essential for the website to function properly. They enable basic features like page navigation and access to secure areas.</td><td>Session ID, security tokens</td></tr>
+        <tr><td><strong>Performance / Analytics</strong></td><td>We use these to understand how visitors interact with our site (e.g., which articles are most popular). This helps us improve our content and design.</td><td>Pageview counts, time on page (via privacy-friendly analytics)</td></tr>
+        <tr><td><strong>Preference</strong></td><td>These cookies allow the site to remember choices you have made (like your preferred language or reading settings) to provide a more personalized experience.</td><td>Language preferences, theme settings</td></tr>
+      </tbody>
+    </table>
+
+    <p>We <strong>do not</strong> use advertising or third-party tracking cookies. Your reading habits are your own.</p>
+
+    <h3>Managing your cookie preferences</h3>
+    <p>You can control and manage cookies in various ways. Most browsers allow you to block or delete cookies. To do this, please refer to the settings in your specific browser (e.g., Chrome, Firefox, Safari). However, please note that blocking essential cookies may affect the functionality of the site.</p>
+    <ul>
+      <li><strong>Browser settings:</strong> You can set your browser to refuse all or some browser cookies, or to alert you when websites set or access cookies.</li>
+      <li><strong>Opt-out tools:</strong> For analytics, we use privacy-first tools that respect Do-Not-Track signals. You can also disable JavaScript in your browser if you prefer.</li>
+    </ul>
+    <p>For more detailed information about cookies and how to manage them, visit <a href="https://www.aboutcookies.org" target="_blank" style="text-decoration:underline; color: var(--meadow);">www.aboutcookies.org</a>.</p>
+
+    <h2>Changes to this policy</h2>
+    <p>We may update this Cookie Policy from time to time to reflect changes in our practices or legal requirements. When we do, we will revise the "Last updated" date at the top of this page. We encourage you to review this policy periodically.</p>
+
+    <h2>Contact us</h2>
+    <p>If you have any questions about our use of cookies or this policy, please feel free to reach out:</p>
+    <ul>
+      <li><strong>Email:</strong> privacy@quillancookie.meadow</li>
+      <li><strong>Mail:</strong> Quillan Cookie Meadow, 42 Meadow Lane, Editorial District</li>
+    </ul>
+
+    <div class="last-updated">
+      <span>✧ This policy is part of our commitment to transparency and reader trust.</span>
+    </div>
+  </section>
+
+  <!-- footer -->
+  <footer class="footer-handmade">
+    <div>
+      <h4>Quillan Cookie Meadow</h4>
+      <p style="max-width: 280px; font-size: 0.9rem; line-height: 1.5; color: #b6aa9c;">A quiet corner for long-form editorial writing. Founded on the belief that depth is not a luxury but a necessity.</p>
+      <div style="margin-top: 1.2rem; display: flex; gap: 1.5rem;">
+        <span>✧</span><span>🌾</span><span>📖</span>
+      </div>
+    </div>
+    <div>
+      <h4>Pages</h4>
+      <a href="#">Home</a>
+      <a href="#">Blog</a>
+      <a href="#">Categories</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+      <a href="#">Authors</a>
+      <a href="#">Archive</a>
+    </div>
+    <div>
+      <h4>Policies</h4>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms &amp; Conditions</a>
+      <a href="#">Cookie Policy</a>
+      <a href="#">Disclaimer</a>
+      <a href="#">Editorial Policy</a>
+    </div>
+    <div>
+      <h4>Resources</h4>
+      <a href="#">Resources</a>
+      <a href="#">FAQ</a>
+      <a href="#">Sitemap</a>
+      <div class="sitemap-inline">
+        <span style="font-size:0.7rem; opacity:0.6;">✧ style guide</span>
+        <span style="font-size:0.7rem; opacity:0.6;">✧ colophon</span>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Quillan Cookie Meadow — handcrafted with attention.</span>
+      <span>🌱 v2.0 · editorial journal</span>
+    </div>
+  </footer>
+</div>
+</body>
+</html>
